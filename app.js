@@ -1,10 +1,5 @@
-let numberStr = '';
-let operationStr = '';
-let sum;
-let isFirstNumber = true;
-let operator;
-let isFinished = true;
-let digitPressed, equalPressed, operatorPressed;
+let numberStr = '', operationStr = '';
+let sum, operator, operand = 0;
 let state = 'clear';
 
 const digits = document.querySelectorAll('.digits');
@@ -43,10 +38,13 @@ function append(e){
     if(state == 'equal'){
         clearCalc();
     }
-    
-    numberStr += value;
-    operationStr += value;
-    
+    if(operand == 0){
+        operationStr = operationStr.slice(0,-1);
+    }
+        numberStr += value;
+        operationStr += value;
+
+
     operand = parseInt(numberStr);
     updateDisplay(operand);
     state = 'digit'
@@ -75,7 +73,6 @@ function assign(e){
     if(state == 'operator'){
         operationStr = operationStr.slice(0,-3);
     }
-    
     operator = (e.target.id);
     operationStr += ` ${e.target.textContent} `;
     numberStr = '';

@@ -12,15 +12,16 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <header><h1>It's Calculator!</h1></header>
+    <header>
+      <h1>It's Calculator!</h1>
+    </header>
+
     <div class="container">
       <div class="display">
-        <output type="text" id="operationDisplay">0</output>
-        <output type="text" id="resultDisplay">0</output>
+        <output type="text" id="operationDisplay"></output>
+        <output type="text" id="resultDisplay"></output>
       </div>
       <div class="buttonGrid">
-        <button id="clear">Clear</button>
-        <button id="delete">Delete</button>
         <button class="digits" id="digit-7">7</button>
         <button class="digits" id="digit-8">8</button>
         <button class="digits" id="digit-9">9</button>
@@ -28,16 +29,19 @@
         <button class="digits" id="digit-4">4</button>
         <button class="digits" id="digit-5">5</button>
         <button class="digits" id="digit-6">6</button>
-        <button class="operators" id="plus">×</button>
+        <button class="operators" id="multiply">×</button>
         <button class="digits" id="digit-7">1</button>
         <button class="digits" id="digit-7">2</button>
         <button class="digits" id="digit-7">3</button>
         <button class="operators" id="minus">-</button>
+        <button id="clear">AC</button>
         <button class="digits" id="digit-7">0</button>
-        <button class="operators" id="dot">.</button>
-        <button class="operators" id="equal">=</button>
+        <button id="equal">=</button>
         <button class="operators" id="plus">+</button>
       </div>
     </div>
+    <footer>
+      <p>Made by Riyad Firdaus &copy; 2022</p>
+    </footer>
   </body>
 </html>

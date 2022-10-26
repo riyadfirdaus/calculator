@@ -13,13 +13,22 @@ text-center{
 header{
     color: rgb(32, 33, 36);
     text-align: center;
+    margin:2rem 3rem;
+}
+
+footer{
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .container{
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 10px auto;
+    margin: 0 auto;
     max-width: 300px;
     min-height: 400px;
     width: 100%;
@@ -37,7 +46,7 @@ header{
     flex:auto;
     display: grid;
     grid-template-columns: repeat(4,auto);
-    grid-template-rows: repeat(5,auto);
+    grid-template-rows: repeat(4,auto);
     width: 100%;
     height: 100%;
     gap: 10px;
@@ -92,28 +101,31 @@ button:active{
 
 }
 
-#clear, #delete{
+#clear{
     color:rgb(32, 33, 36) ;
     background-color: rgb(245, 164, 59);
-    grid-column: span 2;
+    grid-column: span 1;
     font-size: 1rem;
 }
+
 #clear:hover, #delete:hover{
     background-color: rgb(255, 175, 71);
 }
 
 .display{
+
     background-color: #3B3B3B;
     border-radius: 4px;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 1rem;
 }
 
 #operationDisplay{
-    min-height: 1rem;
+    height: 1rem;
     font-size: 1rem;
+    color: rgb(138, 180, 248);
 }
 #resultDisplay{
-    min-height: 2rem;
-    font-size: 2rem;
+    height: 3rem;
+    font-size: 3rem;
 }

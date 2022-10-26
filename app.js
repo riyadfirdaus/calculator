@@ -26,7 +26,7 @@ function clearDisplay(){
     operationStr = '';
     numberStr = '';
     sum = 0;
-    number = 0;
+    operand = 0;
     operationDisplay.textContent = operationStr;
     resultDisplay.textContent = operationStr;
     isFirstNumber = true;
@@ -42,27 +42,27 @@ function append(e){
     }
     numberStr += e.target.textContent;
     operationStr += e.target.textContent;
-    number = parseInt(numberStr);
-    updateDisplay(number);
+    operand = parseInt(numberStr);
+    updateDisplay(operand);
     isFinished = false;
 }
 
-function calculate(sum, number, operator){
+function calculate(sum, operand, operator){
     switch(operator){
         case 'divide':
-            if(number === 0){
-                updateDisplay('error');
+            if(operand === 0){
+                return 'error';
             }
-            return sum*1.0 / number;
+            return sum*1.0 / operand;
             break;
         case 'multiply':
-            return sum*number;
+            return sum * operand;
             break;
         case 'plus':
-            return sum + number;
+            return sum + operand;
             break;
         case 'minus':
-            return sum - number;
+            return sum - operand;
             break;
     }
 }
@@ -70,24 +70,26 @@ function assign(e){
     operationStr += ` ${e.target.textContent} `;
     numberStr = '';
     if(isFirstNumber){
-        sum = number;
+        sum = operand;
         isFirstNumber = false;
         updateDisplay('');
     }
     else{
-        sum = calculate(sum, number, operator);
-        updateDisplay('');
+        sum = calculate(sum, operand, operator);
+        updateDisplay(sum);
     }
     operator = (e.target.id);
     isFinished=false;
 }
 function equal(){
-    sum = calculate(sum, number, operator);
-    updateDisplay(sum);
+    if(isFinished == false){
+        sum = calculate(sum, operand, operator);
+        updateDisplay(sum);
+    }
+    operator = '';
     operationStr = sum;
     isFinished = true;
     isFirstNumber = true;
-    number = sum;
-    console.log(number);
+    operand = sum;
 }
 console.log('text');

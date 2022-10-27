@@ -34,8 +34,9 @@ footer{
     flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
-    width: 300px;
-    min-height: 400px;
+    width: 22%;
+    min-width: 300px;
+    min-height: 20%;
     border-radius: 10px;
     padding:1rem;
     background-color: rgb(32, 33, 36);

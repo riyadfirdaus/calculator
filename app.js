@@ -21,15 +21,21 @@ equalBtn.addEventListener('click', equal);
 function clearCalc(){
     operationStr = '';
     numberStr = '';
-    sum = 0;
+    let sum;
     operand = 0;
     operationDisplay.textContent = operationStr;
     resultDisplay.textContent = operationStr;
     state = 'clear';
 }
 function updateDisplay(str){
+    if(str.toString().length>9){
+        console.log('whay');
+        number = new Intl.NumberFormat("en-US", {notation: "scientific"}).format(parseInt(str));
+    }
+    else 
+        number = new Intl.NumberFormat("en-US").format(parseInt(str));
     operationDisplay.textContent = operationStr;
-    resultDisplay.textContent = str;
+    resultDisplay.textContent = number;
 }
 
 function append(e){
@@ -43,7 +49,6 @@ function append(e){
     }
         numberStr += value;
         operationStr += value;
-
 
     operand = parseInt(numberStr);
     updateDisplay(operand);

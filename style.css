@@ -1,11 +1,16 @@
 *{
     font-family: 'poppins', sans-serif;
 }
+
 html, body{
     margin:0;
     padding:0;
+    overflow:   scroll;
 }
-
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 text-center{
     text-align: center;
 }
@@ -29,30 +34,23 @@ footer{
     flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 300px;
+    width: 300px;
     min-height: 400px;
-    width: 100%;
-    flex: auto;
     border-radius: 10px;
     padding:1rem;
     background-color: rgb(32, 33, 36);
 }
-.display{
-    background-color: transparent;  
-    color: #e8eaed;
-}
-
 .buttonGrid{
-    flex:auto;
+    flex: 1 0 auto;
+    min-height: 300px;
     display: grid;
-    grid-template-columns: repeat(4,auto);
-    grid-template-rows: repeat(4,auto);
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(4, auto);
     width: 100%;
     height: 100%;
     gap: 10px;
 }
-
-
 
 ul{
     display: flex;
@@ -113,19 +111,26 @@ button:active{
 }
 
 .display{
-
+    display: flex;
+    flex-flow: column wrap;
     background-color: #3B3B3B;
     border-radius: 4px;
     margin-bottom: 10px;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
 }
-
+.display > *{
+    flex:auto;
+}
 #operationDisplay{
-    height: 1rem;
+    line-height: 1rem;
+    min-height: 1rem;
     font-size: 1rem;
     color: rgb(138, 180, 248);
+    margin:0.5rem 0;
 }
 #resultDisplay{
-    height: 3rem;
-    font-size: 3rem;
+    line-height: 2.75rem;
+    min-height: 2.75rem;
+    font-size: 2.75rem;
+    color: #e8eaed;
 }

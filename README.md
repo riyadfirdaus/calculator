@@ -20,4 +20,5 @@ This is a calculator app created using only HTML, CSS, and vanilla Javascript.
 ### Third Party Code
 * [Google Font](https://fonts.google.com/) 
 
-## Author 👤 [Riyad Firdaus](https://github.com/riyadfirdaus/)
+## Author 👤
+[Riyad Firdaus](https://github.com/riyadfirdaus/)

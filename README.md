@@ -1,7 +1,8 @@
 # Calculator
 This is a calculator app created using only HTML, CSS, and vanilla Javascript.
 🌱 Created as a part of The Odin Project's [curriculum](https://www.theodinproject.com/lessons/foundations-calculator).
-🔗 **Live Preview:** [Click Here](https://riyadfirdaus.github.io/rock-paper-scissors/)
+
+🔗 **Live Preview:** [Click Here](https://riyadfirdaus.github.io/calculator/)
 
 ## Functionality
 * It's a calculator
